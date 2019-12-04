@@ -1,3 +1,18 @@
+<?php
+
+$servicos = [
+  ["imagem"=>"img/site.png","titulo"=>"SITE","descricao"=>"Descrição serviço 1"],
+  ["imagem"=>"img/blog.png","titulo"=>"BLOG","descricao"=>"Descrição serviço 2"],
+  ["imagem"=>"img/loja.png","titulo"=>"LOJA VIRTUAL","descricao"=>"Descrição serviço 3"],
+  ["imagem"=>"img/loja.png","titulo"=>"LOJA VIRTUAL","descricao"=>"Descrição serviço 3"],
+  ["imagem"=>"img/loja.png","titulo"=>"LOJA VIRTUAL","descricao"=>"Descrição serviço 3"]
+
+];
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,42 +47,30 @@
   </nav>
   </header>
   <main>
-    <section id="banner">
+      <section id="banner">
       <h2>Compre nossos produtos! =)</h2>
     </section>
     <section id="servico" class="container mt-5">
       <div class="row">
-        <div class="col-4">
+       
+      <?php foreach ($servicos as $servico){
+
+       ?>
+      
+      <div class="col-4">
           <div class="card" >
-            <img src="img/site.png" class="card-img-top" alt="...">
+            <img src= "<?php echo $servico["imagem"]; ?>" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">SITE</h5>
-              <p class="card-text">Já pensou em ter um SITE que e a sua cara.<br> Click em saiba mais...</p>
+              <h5 class="card-title">
+                <?php echo $servico["titulo"]; ?>
+              </h5>
+              <p class="card-text"> <?php echo $servico["descricao"]; ?></p>
               <a href="#" class="btn btn-primary">Saiba mais</a>
             </div>
           </div>
         </div>
-        <div class="col-4">
-          <div class="card" >
-            <img src="img/blog.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">BLOG</h5>
-              <p class="card-text">Já pensou em ter um BLOG que e a sua cara.<br> Click em saiba mais...</p>
-              <a href="#" class="btn btn-primary">Saiba mais</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="card" >
-            <img src="img/loja.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">LOJA VIRTUAL</h5>
-              <p class="card-text">Já pensou em ter uma LOJA que e a sua cara.<br> Click em saiba mais...</p>
-              <a href="#" class="btn btn-primary">Saiba mais</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php } ?>
+
     </section>
     <section id="sobre" class="container mt-5">
       <div class="row">
